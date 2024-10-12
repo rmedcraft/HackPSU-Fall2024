@@ -10,35 +10,31 @@ export default function Journals() {
         example: "",
     })
 
-    useEffect(() => {
-        console.log("what are you fetching?")
-        fetch("/").then((res) => {
-            // console.log(res.json())
-            res.json().then((data) => {
-                console.log("are you alive/???")
-                setData({
-                    date: data.date,
-                    example: data.example,
-                    title: data.title,
-                })
-                // setting the data from an API
-            })
+    // video
+    const fetchAPI = async () => {
+        const response = await axios.get("http://localhost:5000/data")
+        console.log(response.data)
+        setData({
+            date: response.data.date,
+            title: response.data.title,
+            example: response.data.example,
         })
+    }
 
-        
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("http://localhost:5000");
-                setData({
-                    date: response.data.date,
-                    title: response.data.title,
-                    example: response.data.examples,
-                })
-            } catch (err) {
-                console.error("failed to fetch data.");
-            }
-        }
-        fetchData();
+    useEffect(() => {
+        // console.log("what are you fetching?")
+        // fetch("/data").then((res) =>
+        //     // console.log(res.json())
+        //     res.json()).then((data) => {
+        //         console.log("are you alive/???")
+        //         setData({
+        //             date: data.date,
+        //             example: data.example,
+        //             title: data.title,
+        //         });
+        //         // setting the data from an API
+        //     })
+        fetchAPI()
     }, [])
 
     return (

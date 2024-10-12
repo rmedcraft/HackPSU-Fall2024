@@ -7,7 +7,7 @@ export default function Journal(props: any) {
 
     return (
         <div className="journal">
-            <h2 className='journalTitle'>{date} {title}</h2>
+            <h2 className='journalTitle'><span className='date'>{date}</span> {title}</h2>
             <p className='sample'>{entry}</p>
             {/* <button className='button'>View Full Entry</button> */}
         </div>
