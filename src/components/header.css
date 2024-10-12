@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+body {
+    box-sizing: border-box;
+    font-family: "Quicksand";
+    font-weight: 100;
+
+    margin: 0;
+}
+
+.header {
+    /*flex box alignment*/
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    /*border & padding*/
+    border-radius: 2px;
+    background-color: #588b76;
+    padding-top: 0.1px;
+    padding-bottom: 0.1px;
+}
+
+.icon {
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
