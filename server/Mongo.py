@@ -7,10 +7,9 @@ uri = "mongodb+srv://user:password1234@cluster0.amvde.mongodb.net/?retryWrites=t
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 
-
-
-def createJorn(text, score):
-    db = client["user1"]
+#takes in the text and the score and adds the journal to the database
+def createJorn(text, score, user):
+    db = client[user]
     collection = db["Journals"]
 
     post = {"text": text, "score": score}
@@ -18,6 +17,8 @@ def createJorn(text, score):
     collection.insert_one(post)
 
     return
+
+
 
 #needs the user db name as in user1
 def retrieveJorn(user):
