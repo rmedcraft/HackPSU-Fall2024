@@ -14,8 +14,25 @@ def classifier(text):
     output = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
     
     
-    return output(text)
+    return translate(output(text))
 
+
+def translate(output):
+    match output[0]["label"]:
+        case "LABEL_0":
+            value = "BPD"
+        case "LABEL_1":
+            value = "bipolar"
+        case "LABEL_2":
+            value = "depression"
+        case "LABEL_3":
+            value = "Anxiety"
+        case "LABEL_4":
+            value = "schizophrenia"
+        case "LABEL_5":
+            value = "mental illness"
+
+    return value, output[0]["score"]
 
 
 def chat(text):
