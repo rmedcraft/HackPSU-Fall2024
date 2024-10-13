@@ -8,8 +8,10 @@ export default function JournalPage() {
 
     const { title } = location.state || {};
 
+    const score = title.score * 100;
+
     return (<div>
-        <Header title={title} />
+        <Header title={title.title} />
         <div className="backAndThoughts">
             <Link to={"/"}>
                 <h2 className="backIcon">
@@ -21,6 +23,6 @@ export default function JournalPage() {
         </div>
         <textarea className="textInput"></textarea>
         <h2 className="titleThing">Analytics: </h2>
-        <div className="graph"></div>
+        <h3 className="output">{title.label} {score}%</h3>
     </div>)
 }

@@ -55,11 +55,11 @@ export default function Form(props: any) {
     return (
         <div className="form">
             <h2 className="formBackIcon"><i className="bi bi-arrow-left-circle-fill"></i></h2>
-            <h2 className="formStrTitle" onChange={(e: any) => setTitle(e.target.value)}>Title: </h2>
-            <input className="formTitle"></input>
+            <h2 className="formStrTitle" >Title: </h2>
+            <input className="formTitle" onChange={(e: any) => setTitle(e.target.value)}></input>
 
-            <h2 className="formStr" onChange={(e: any) => setJournal(e.target.value)}>Thoughts: </h2>
-            <textarea className="formInputBox"></textarea>
+            <h2 className="formStr" >Thoughts: </h2>
+            <textarea className="formInputBox" onChange={(e: any) => setJournal(e.target.value)}></textarea>
 
             <button className="formSubmit" onClick={handleSubmit}>Submit</button>
         </div >
