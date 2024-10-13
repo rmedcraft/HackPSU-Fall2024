@@ -34,3 +34,13 @@ def retrieveJorn(user):
     collection = db["Journals"]
     
     return collection.find({})
+
+def createUser(user):
+    uri = "mongodb+srv://user:password1234@cluster0.amvde.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    # Create a new client and connect to the server
+    client = MongoClient(uri, server_api=ServerApi('1'))
+    db = client[user]
+    collection = db["Journals"]
+
+
+    return
