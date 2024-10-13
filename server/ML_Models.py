@@ -17,18 +17,18 @@ def classifier(text):
     return output(text)
 
 
-"""
-def talk(text):
+
+def chat(text):
+
     model = AutoModelForCausalLM.from_pretrained(
         "microsoft/Phi-3-mini-4k-instruct", #specify the model
-        device_map="cuda", #specify the gpu as nvidia
+        device_map="cuda",
         torch_dtype="auto", #chose the datatype
         trust_remote_code=True,
     )
 
 
     tokenizer = AutoTokenizer.from_pretrained("microsoft/Phi-3-mini-4k-instruct")
-
 
     #combine the tokenizer and model into a pipeline
     generator = pipeline(
@@ -42,11 +42,11 @@ def talk(text):
 
 
     messages = [
-        {"role": "therapist", "content": text}
+        {"role": "user", "content": text}
     ]
 
     # Generate output
     output = generator(messages)
-    return(output[0]["generated_text"])"""
-
+    print(output[0]["generated_text"])
+    return(output[0]["generated_text"])
 
