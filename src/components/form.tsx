@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Form(props: any) {
     const [title, setTitle] = useState('a');
     const [journal, setJournal] = useState('a');
-
+    const setWriting = props.setWriting;
 
     function insertJournal() {
         console.log("did something")
@@ -50,11 +50,12 @@ export default function Form(props: any) {
         insertJournal();
         setTitle("a");
         setJournal("a");
+        setWriting(false);
     }
 
     return (
         <div className="form">
-            <h2 className="formBackIcon"><i className="bi bi-arrow-left-circle-fill"></i></h2>
+            <h2 className="formBackIcon" onClick={() => setWriting(false)}><i className="bi bi-arrow-left-circle-fill"></i></h2>
             <h2 className="formStrTitle" >Title: </h2>
             <input className="formTitle" onChange={(e: any) => setTitle(e.target.value)}></input>
 
