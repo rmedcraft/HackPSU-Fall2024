@@ -83,3 +83,8 @@ body {
 .sample {
     margin-left: 1.5%;
 }
+
+.date {
+    color: var(--green);
+    font-size: smaller;
+}
