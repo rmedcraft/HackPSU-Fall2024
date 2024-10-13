@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+import ML_Models as M
 
 app = Flask(__name__)
 cors = CORS(app, origins="*")
