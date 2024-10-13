@@ -47,6 +47,5 @@ def chat(text):
 
     # Generate output
     output = generator(messages)
-    print(output[0]["generated_text"])
     return(output[0]["generated_text"])
 
