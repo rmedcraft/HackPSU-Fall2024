@@ -5,11 +5,12 @@ import Header from './components/header'
 import './index.css'
 import Footer from './components/footer'
 import Journals from './components/journals'
+import App from './App'
+
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Header />
-    <Journals />
-    <Footer />
+    <App />
   </StrictMode>,
 )

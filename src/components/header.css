@@ -67,6 +67,7 @@ body {
 }
 
 .journal {
+    text-decoration: none;
     color: var(--darkblue);
     background-color: white;
     border-radius: 20px;
@@ -87,4 +88,58 @@ body {
 .date {
     color: var(--green);
     font-size: smaller;
+}
+
+.form {
+    position: absolute;
+    top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: var(--green);
+    border-radius: 20px;
+    width: 80%;
+    margin: 10%;
+    height: 600px;
+
+    z-index: 20;
+    box-shadow: 100px var(--darkblue);
+}
+
+.formTitle,
+.formInputBox,
+.formSubmit {
+    background-color: var(--darkblue);
+}
+
+.formTitle,
+.formInputBox {
+    margin: 0 10%;
+}
+
+.formInputBox {
+    height: 50%;
+}
+
+.formSubmit {
+    height: 5%;
+    width: 10%;
+    align-self: flex-end;
+    margin-right: 4%;
+}
+
+.formStr {
+    margin: 0;
+    text-align: center;
+}
+
+.formInputHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formBackIcon {
+    margin-left: 2%;
 }
