@@ -8,12 +8,15 @@ export default function Journals() {
     const [journals, setJournals] = useState([{
         date: "",
         title: "",
-        text: ""
+        text: "",
+        score: 0,
+        label: ""
     }])
 
     // fetches the journal data from our server
     const fetchAPI = async () => {
         const response = await axios.get("http://localhost:5000/data")
+        console.log(response.data)
         setJournals(response.data)
     }
 
@@ -32,7 +35,10 @@ export default function Journals() {
                 key={index}
                 date={journal.date}
                 title={journal.title}
-                example={journal.text} />
+                text={journal.text}
+                score={journal.score}
+                label={journal.label}
+            />
             )}
 
         </div>

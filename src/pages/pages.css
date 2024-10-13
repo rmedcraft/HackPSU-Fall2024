@@ -48,3 +48,11 @@ body {
     text-decoration: none;
     color: white;
 }
+
+.output {
+    text-align: center;
+    background-color: #387478;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 20px;
+}
