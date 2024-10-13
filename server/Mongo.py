@@ -17,7 +17,7 @@ def createJorn(text, score, label, user, title, date):
     db = client[user]
     collection = db["Journals"]
 
-    post = {"id": title, "date": date, "text": text, "score": score, "label": label}
+    post = {"_id": title, "date": date, "text": text, "score": score, "label": label}
 
     collection.insert_one(post)
 
