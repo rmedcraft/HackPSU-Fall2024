@@ -7,17 +7,17 @@ uri = "mongodb+srv://user:password1234@cluster0.amvde.mongodb.net/?retryWrites=t
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
 
-def generateJorn(text, user):
+def generateJorn(text, user, title, date):
     result = ML_Models.classifier(text)
-    createJorn(text, result[1], result[0], user)
+    createJorn(text, result[1], result[0], user, title, date)
     return
 
 #takes in the text and the score and adds the journal to the database
-def createJorn(text, score, label, user):
+def createJorn(text, score, label, user, title, date):
     db = client[user]
     collection = db["Journals"]
 
-    post = {"text": text, "score": score, "label": label}
+    post = {"id": title, "date": date, "text": text, "score": score, "label": label}
 
     collection.insert_one(post)
 
@@ -29,11 +29,5 @@ def createJorn(text, score, label, user):
 def retrieveJorn(user):
     db = client[user]
     collection = db["Journals"]
-
-
-    """
-    for x in collection.find({}): 
-        print(x)
-    """
+    
     return collection.find({})
-
