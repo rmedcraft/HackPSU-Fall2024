@@ -12,6 +12,13 @@ export default function Journal(props: any) {
     const date = props.date ?? ""
     const title = props.title ?? "";
     const entry = props.text ?? "";
+
+    function cutoff(text: string, amount: number) {
+        if (text.length < amount) {
+            return text
+        }
+        return text.substring(0, amount) + "..."
+    }
     // const scores = props.scores ?? [0, 0, 0, 0, 0, 0]
 
     // const navigate = useNavigate();
@@ -26,8 +33,8 @@ export default function Journal(props: any) {
     return (
         <Link className="journal" to={'/journalPage'} state={{ title: prop }} >
             <div>
-                <h2 className='journalTitle'><span className='date'>{date}</span> {title}</h2>
-                <p className='sample'>{entry}</p>
+                <h2 className='journalTitle'><span className='date'>{date}</span> {cutoff(title, 20)}</h2>
+                <p className='sample'>{cutoff(entry, 50)}</p>
                 {/* <button className='button'>View Full Entry</button> */}
             </div>
         </Link>
