@@ -117,6 +117,17 @@ body {
 .formTitle,
 .formInputBox {
     margin: 0 10%;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.formStrTitle {
+    position: absolute;
+    /* text-align: center; */
+    right: 45%;
+    top: 10px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .formInputBox {
@@ -138,6 +149,9 @@ body {
 .formInputHeader {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .formBackIcon {

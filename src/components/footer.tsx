@@ -6,7 +6,7 @@ export default function Footer() {
     const [writing, setWriting] = useState(false)
 
     function handleClick() {
-        setWriting(true);
+        setWriting(writing => !writing);
     }
 
     return (

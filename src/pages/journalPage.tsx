@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import Header from "../components/header"
 import "../index.css"
 import "./pages.css"
 
-export default function JournalPage(props: any) {
+export default function JournalPage() {
+    const location = useLocation()
+
+    const { title } = location.state || {};
+
     return (<div>
-        <Header />
+        <Header title={title} />
         <div className="backAndThoughts">
             <Link to={"/"}>
                 <h2 className="backIcon">

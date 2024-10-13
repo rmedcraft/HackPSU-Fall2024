@@ -1,6 +1,6 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import JournalPage from "./pages/journal1";
+import JournalPage from "./pages/journalPage";
 
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/journal1" element={<JournalPage />} />
+                <Route path="/journalPage" element={<JournalPage />} />
             </Routes>
         </Router>
     )
