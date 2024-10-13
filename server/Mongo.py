@@ -19,5 +19,14 @@ def createJorn(text, score):
 
     return
 
+#needs the user db name as in user1
+def retrieveJorn(user):
+    db = client[user]
+    collection = db["Journals"]
 
-createJorn("asdfasdfasdfs", 1.5336222555)
+
+    """
+    for x in collection.find({}): 
+        print(x)
+    """
+    return collection.find({})
