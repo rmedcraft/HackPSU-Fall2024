@@ -16,7 +16,7 @@ export default function Journal(props: any) {
     // const navigate = useNavigate();
 
     return (
-        <Link className="journal" to={'/journal1'}>
+        <Link className="journal" to={'/journalPage'} state={{ title: props.title }} >
             <div>
                 <h2 className='journalTitle'><span className='date'>{date}</span> {title}</h2>
                 <p className='sample'>{entry}</p>
