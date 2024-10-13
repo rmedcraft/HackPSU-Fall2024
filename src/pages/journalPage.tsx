@@ -69,7 +69,6 @@ export default function JournalPage() {
             <h2></h2> {/**this is just so you can center them */}
         </div>
         <textarea className="textInput" value={title.text} onChange={(e: any) => setJournal(e.target.value)}></textarea>
-        <button className="analyze" onClick={handleSubmit}>Analyze</button>
         <h2 className="titleThing">Analytics: </h2>
         <h3 className="output">{title.label} {score}%</h3>
     </div>)

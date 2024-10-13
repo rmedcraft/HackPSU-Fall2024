@@ -123,8 +123,8 @@ body {
 
 .formStrTitle {
     position: absolute;
-    /* text-align: center; */
-    right: 45%;
+    text-align: center;
+    right: 50%;
     top: 10px;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -139,6 +139,7 @@ body {
     width: 10%;
     align-self: flex-end;
     margin-right: 4%;
+    cursor: pointer;
 }
 
 .formStr {
@@ -156,5 +157,9 @@ body {
 
 .formBackIcon {
     margin-left: 2%;
+    margin-right: 2%;
+    padding: auto;
+    width: auto;
+    height: auto;
     cursor: pointer;
 }
