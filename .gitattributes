@@ -1,2 +1,2 @@
-mental-health-classifier filter=lfs diff=lfs merge=lfs -text
-mental-health-classifier/**/* filter=lfs diff=lfs merge=lfs -text
+server/mental-health-classifier filter=lfs diff=lfs merge=lfs -text
+server/mental-health-classifier/**/* filter=lfs diff=lfs merge=lfs -text
