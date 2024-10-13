@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline, AutoModelForCausalLM
-
+import pickle
 
 
 def classifier(text):
@@ -67,4 +67,19 @@ def chat(text):
 
     
     return(output[0]["generated_text"])
+
+def randomforestmodels():
+    # Load the depression model
+    with open('depression_model.pkl', 'rb') as file:
+        depression_model = pickle.load(file)
+
+    # Load the anxiety model
+    with open('anxiety_model.pkl', 'rb') as file:
+        anxiety_model = pickle.load(file)
+
+    # Load the panic attack model
+    with open('panic_attack_model.pkl', 'rb') as file:
+        panic_attack_model = pickle.load(file)
+
+    return depression_model, anxiety_model, panic_attack_model
 
