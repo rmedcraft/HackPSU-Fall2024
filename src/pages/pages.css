@@ -56,3 +56,11 @@ body {
     margin-left: 25%;
     border-radius: 20px;
 }
+
+.analyze {
+    height: 30px;
+    margin-left: 50px;
+    background-color: var(--darkblue);
+    /* display: flex; */
+    /* justify-content: center; */
+}

@@ -19,7 +19,8 @@ export default function Journal(props: any) {
     const prop = {
         title: props.title,
         score: props.score,
-        label: props.label
+        label: props.label,
+        text: props.text
     }
 
     return (

@@ -36,22 +36,6 @@ def addJournal():
 def testJournal():
     data = []
 
-    # data.append({
-    #     "date": "9/11",
-    #     "title": "THIS IS A REALLY COOL TITLE",
-    #     "example": "THIS IS A REALLY COOL EXAMPLE",
-    # })
-    # data.append({
-    #     "date": "9/12",
-    #     "title": "THIS IS A REALLY COOLer TITLE",
-    #     "example": "THIS IS A REALLY COOLer EXAMPLE",
-    # }) 
-    # data.append({
-    #     "date": "9/13",
-    #     "title": "THIS IS A REALLY COOLerest TITLE",
-    #     "example": "THIS IS A REALLY COOLerset EXAMPLE",
-    # })
-
     for x in Mongo.retrieveJorn("user1"):
         data.append({
             "text": x["text"],
@@ -60,12 +44,13 @@ def testJournal():
             "date": x["date"],
             "title": str(x["_id"])
         })
-        # data.append(json.dumps(x))
 
     return jsonify(data)
     
 
-    # return jsonify(data)
+@app.route("/edit", methods=["POST", "GET"])
+def editJournal():
+    Mongo.editJorn("user1", )
 
 
 if __name__ == "__main__":
