@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 import Mongo
+from datetime import date
 
 app = Flask(__name__)
 cors = CORS(app, origins="*")
@@ -26,9 +27,8 @@ def addJournal():
     #     return jsonify({"error": "Unsupported media type"})
     print(f"Content-Type: {request.content_type}")  # Should print application/json
     print(f"Raw Data: {request.data}")  # Print raw data
-    
-    
-    Mongo.generateJorn(request.json["journal"], "user1")
+
+    Mongo.generateJorn(request.json["journal"], "user1", request.json["title"], str(date.today()))
     return {"message": "Received" + str(request.content_type) + str(request.data)}, 200
 
 
@@ -36,23 +36,36 @@ def addJournal():
 def testJournal():
     data = []
 
-    data.append({
-        "date": "9/11",
-        "title": "THIS IS A REALLY COOL TITLE",
-        "example": "THIS IS A REALLY COOL EXAMPLE",
-    })
-    data.append({
-        "date": "9/12",
-        "title": "THIS IS A REALLY COOLer TITLE",
-        "example": "THIS IS A REALLY COOLer EXAMPLE",
-    }) 
-    data.append({
-        "date": "9/13",
-        "title": "THIS IS A REALLY COOLerest TITLE",
-        "example": "THIS IS A REALLY COOLerset EXAMPLE",
-    })
+    # data.append({
+    #     "date": "9/11",
+    #     "title": "THIS IS A REALLY COOL TITLE",
+    #     "example": "THIS IS A REALLY COOL EXAMPLE",
+    # })
+    # data.append({
+    #     "date": "9/12",
+    #     "title": "THIS IS A REALLY COOLer TITLE",
+    #     "example": "THIS IS A REALLY COOLer EXAMPLE",
+    # }) 
+    # data.append({
+    #     "date": "9/13",
+    #     "title": "THIS IS A REALLY COOLerest TITLE",
+    #     "example": "THIS IS A REALLY COOLerset EXAMPLE",
+    # })
+
+    for x in Mongo.retrieveJorn("user1"):
+        data.append({
+            "text": x["text"],
+            "score": x["score"],
+            "label": x["label"],
+            "date": x["date"],
+            "title": str(x["_id"])
+        })
+        # data.append(json.dumps(x))
 
     return jsonify(data)
+    
+
+    # return jsonify(data)
 
 
 if __name__ == "__main__":

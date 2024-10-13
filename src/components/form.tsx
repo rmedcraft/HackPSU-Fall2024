@@ -46,6 +46,7 @@ export default function Form(props: any) {
 
     function handleSubmit(evt: any) {
         evt.preventDefault();
+        console.log(title, journal)
         insertJournal();
         setTitle("a");
         setJournal("a");

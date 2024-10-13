@@ -8,7 +8,7 @@ export default function Journals() {
     const [journals, setJournals] = useState([{
         date: "",
         title: "",
-        example: ""
+        text: ""
     }])
 
     // fetches the journal data from our server
@@ -19,7 +19,11 @@ export default function Journals() {
 
     useEffect(() => {
         fetchAPI()
-    }, [])
+    }, [journals])
+
+    // function shorten(input: string, length: number): string {
+    //     return input!.substring(0, length) + "...";
+    // }
 
     return (
         <div className='journals'>
@@ -28,7 +32,7 @@ export default function Journals() {
                 key={index}
                 date={journal.date}
                 title={journal.title}
-                example={journal.example} />
+                example={journal.text} />
             )}
 
         </div>

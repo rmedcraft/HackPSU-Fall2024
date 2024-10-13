@@ -23,7 +23,6 @@ def createJorn(text, score, label, user, title, date):
 
     return
 
-
 #needs the user db name as in user1
 def retrieveJorn(user):
     uri = "mongodb+srv://user:password1234@cluster0.amvde.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
